@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html data-page-node-id="2H6jTBMzTrKOCkf7SpgoNh" lang="zh-CN"><head data-page-node-id="06VtLGKpBX6T4KiD2NUtfS">
+<meta data-page-node-id="fV2TfLe4MrBd2uSYohrCll" charset="UTF-8">
+<meta data-page-node-id="Urov9mk7z7IhBxyIh0dBEs" name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-page-node-id="OxxF5kEziYgxuUK7jC6fSs" data-pnid-children="ntL0Ezqpx6VQB7KFywvXLs">谭启超 — 产品作品集 · AI / 平台</title>
+<meta data-page-node-id="zEnXPN8ve1JoSiUYBOf14q" name="description" content="谭启超，12 年 B 端产品经验，专注平台 / PaaS / 中台 / API 开放平台，以 AI 与大模型落地真实业务场景。作品可在线体验。">
+<style data-page-node-id="4AC3dyCoDWDDrlDC9WGhfp" data-pnid-children="nJC27mQ72pkBz1ERaefcrJ">
+  :root {
+    --bg: #faf9f6;
+    --surface: #ffffff;
+    --ink: #1c1b19;
+    --ink-2: #55514a;
+    --ink-3: #8b867c;
+    --line: #e4e0d7;
+    --accent: #b85c38;
+    --accent-dk: #9c4a2b;
+    --accent-soft: #fbf0ea;
+    --dark: #1c1b19;
+    --dark-2: #26241f;
+    --radius: 4px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+  body {
+    font-family: "PingFang SC", "HarmonyOS Sans SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+    background: var(--bg); color: var(--ink);
+    line-height: 1.75; -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  a:focus-visible, .btn:focus-visible, .flink:focus-visible, .cway:focus-visible, .nav-resume:focus-visible {
+    outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px;
+  }
+  .wrap { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
+  .mono { font-family: "SF Mono", "Segoe UI Mono", Consolas, monospace; letter-spacing: .06em; }
+
+  /* ===== Nav ===== */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(250, 249, 246, .92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-in { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .brand { font-weight: 700; font-size: 15px; letter-spacing: -.01em; }
+  .brand span { color: var(--ink-3); font-weight: 400; margin-left: 8px; font-size: 13px; }
+  .nav-links { display: flex; gap: 28px; }
+  .nav-links a { font-size: 13.5px; color: var(--ink-2); transition: color .18s; }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-links a .num { color: var(--ink-3); font-size: 10px; margin-right: 5px; }
+  .nav-resume { font-size: 13px; border-bottom: 1px solid var(--ink); padding-bottom: 2px; }
+  .nav-resume:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* ===== Hero (asymmetric) ===== */
+  .hero { padding: 96px 0 84px; border-bottom: 1px solid var(--line); }
+  .hero-grid { display: grid; grid-template-columns: 1.45fr .85fr; gap: 72px; align-items: end; }
+  .hero-mark { display: flex; align-items: center; gap: 6px; margin-bottom: 26px; }
+  .hero-mark i { display: block; height: 2px; background: var(--ink); border-radius: 2px; }
+  .hero-mark i:nth-child(1) { width: 26px; }
+  .hero-mark i:nth-child(2) { width: 14px; opacity: .4; }
+  .hero-mark i:nth-child(3) { width: 8px; height: 8px; border-radius: 1px; background: var(--accent); }
+  .hero h1 {
+    font-size: clamp(34px, 5.4vw, 62px); font-weight: 800;
+    letter-spacing: -.035em; line-height: 1.14;
+  }
+  .hero h1 em { font-style: normal; color: var(--accent); }
+  .hero-lead { margin-top: 26px; font-size: 16px; color: var(--ink-2); max-width: 640px; line-height: 1.85; }
+  .hero-lead b { color: var(--ink); font-weight: 700; }
+  .keywords { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 9px; max-width: 720px; }
+  .keywords span { font-size: 12px; color: var(--ink-2); background: var(--surface); border: 1px solid var(--line); padding: 6px 14px; border-radius: 999px; display: inline-flex; align-items: center; gap: 8px; font-weight: 500; transition: border-color .18s, color .18s; }
+  .keywords span::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); flex: none; }
+  .keywords span:hover { border-color: var(--accent); color: var(--ink); }
+  .hero-actions { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 13px 22px; font-size: 14px; font-weight: 600; border-radius: var(--radius);
+    border: 1px solid transparent; transition: transform .18s, background .18s, color .18s;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .btn-solid { background: var(--dark); color: #fff; }
+  .btn-solid:hover { background: var(--accent); }
+  .btn-line { border-color: var(--line); color: var(--ink); background: transparent; }
+  .btn-line:hover { border-color: var(--ink); }
+  .btn-txt { color: var(--ink-2); padding-left: 4px; }
+  .btn-txt:hover { color: var(--accent); }
+
+  .profile { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 26px 26px 22px; box-shadow: 0 12px 34px rgba(28,27,25,.05); }
+  .profile-status {
+    display: inline-flex; align-items: center; gap: 8px; font-size: 10.5px;
+    letter-spacing: .1em; text-transform: uppercase; font-weight: 700; color: var(--accent-dk);
+    background: var(--accent-soft); border: 1px solid #f0dfd4; padding: 5px 11px; border-radius: 999px;
+    margin-bottom: 18px;
+  }
+  .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); display: inline-block; box-shadow: 0 0 0 3px rgba(184,92,56,.15); }
+  .profile dl div { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+  .profile dl div:last-child { border-bottom: none; }
+  .profile dt { font-size: 12px; color: var(--ink-3); letter-spacing: .04em; }
+  .profile dd { font-size: 13px; font-weight: 600; text-align: right; }
+  .profile .mail { display: flex; align-items: center; justify-content: space-between; margin-top: 12px; font-size: 12.5px; color: var(--ink-2); background: var(--bg); border: 1px solid var(--line); border-radius: 4px; padding: 10px 12px; }
+  .profile .mail::after { content: "↗"; color: var(--accent); font-size: 14px; }
+  .profile .mail:hover { border-color: var(--accent); color: var(--accent-dk); }
+
+  /* ===== Section frame ===== */
+  section { padding: 84px 0 0; }
+  .sec-top { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; margin-bottom: 40px; }
+  .sec-label { font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+  .sec-top h2 { font-size: clamp(28px, 3.4vw, 40px); font-weight: 800; letter-spacing: -.035em; margin-top: 6px; }
+  .sec-top .note { font-size: 13.5px; color: var(--ink-3); max-width: 380px; text-align: right; line-height: 1.7; }
+
+  /* ===== Expertise strip ===== */
+  .expertise { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .exp { padding: 28px 22px 30px; border-left: 1px solid var(--line); }
+  .exp:first-child { border-left: none; padding-left: 0; }
+  .exp .n { font-size: 11px; color: var(--accent); font-weight: 700; letter-spacing: .08em; }
+  .exp h4 { font-size: 15px; font-weight: 700; margin: 10px 0 8px; letter-spacing: -.01em; }
+  .exp p { font-size: 12.8px; color: var(--ink-3); line-height: 1.7; }
+  .exp-note { margin-top: 20px; font-size: 13.5px; color: var(--ink-3); line-height: 1.7; border-left: 2px solid var(--accent); padding-left: 14px; }
+
+  /* ===== Feature project (dark block) ===== */
+  .feature {
+    background: var(--dark); color: #f6f4ee; border-radius: var(--radius);
+    padding: 48px 50px 44px; position: relative; overflow: hidden;
+  }
+  .feature::after {
+    content: ""; position: absolute; right: -120px; top: -140px; width: 420px; height: 420px;
+    background: radial-gradient(circle, rgba(184,92,56,.28) 0%, transparent 68%); pointer-events: none;
+  }
+  .f-top { display: flex; align-items: center; justify-content: space-between; position: relative; z-index: 1; }
+  .f-no { font-size: 13px; color: #d99a7c; font-weight: 700; letter-spacing: .1em; }
+  .f-kind { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: #9a948a; border: 1px solid #45423b; padding: 4px 11px; border-radius: 999px; }
+  .feature h3 { font-size: clamp(23px, 2.8vw, 30px); font-weight: 800; letter-spacing: -.03em; margin: 26px 0 14px; position: relative; z-index: 1; }
+  .f-desc { font-size: 15px; color: #c4bfb5; max-width: 780px; line-height: 1.9; position: relative; z-index: 1; }
+  .f-pillars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin: 34px 0 32px; border-top: 1px solid #3a3731; position: relative; z-index: 1; }
+  .f-pillars div { padding: 18px 18px 0 0; }
+  .f-pillars div + div { border-left: 1px solid #3a3731; padding-left: 20px; }
+  .f-pillars b { display: block; font-size: 13.5px; color: #f6f4ee; margin-bottom: 6px; }
+  .f-pillars span { font-size: 12px; color: #9a948a; line-height: 1.6; }
+  .f-links { display: flex; flex-wrap: wrap; gap: 10px; position: relative; z-index: 1; }
+  .flink {
+    display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600;
+    padding: 10px 17px; border-radius: var(--radius); transition: transform .18s, background .18s, color .18s;
+  }
+  .flink:hover { transform: translateY(-2px); }
+  .flink-light { background: #f6f4ee; color: var(--dark); }
+  .flink-light:hover { background: var(--accent); color: #fff; }
+  .flink-ghost { border: 1px solid #4a463e; color: #d8d3c9; }
+  .flink-ghost:hover { border-color: #d8d3c9; color: #fff; }
+  .f-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 30px; position: relative; z-index: 1; }
+  .f-tags span { font-size: 11px; color: #9a948a; border: 1px solid #3a3731; padding: 3px 10px; border-radius: 999px; }
+
+  /* 对等主作品卡（浅色版） */
+  .feature-light { background: var(--surface); color: var(--ink); border: 1px solid var(--line); }
+  .feature-light::after { background: radial-gradient(circle, rgba(184,92,56,.10) 0%, transparent 68%); }
+  .feature-light .f-no { color: var(--accent); }
+  .feature-light .f-kind { color: var(--ink-3); border-color: var(--line); }
+  .feature-light .f-desc { color: var(--ink-2); }
+  .feature-light .f-pillars { border-top-color: var(--line); }
+  .feature-light .f-pillars div + div { border-left-color: var(--line); }
+  .feature-light .f-pillars b { color: var(--ink); }
+  .feature-light .f-pillars span { color: var(--ink-3); }
+  .flink-dark { background: var(--dark); color: #fff; }
+  .flink-dark:hover { background: var(--accent); color: #fff; }
+  .feature-light .f-tags span { color: var(--ink-3); border-color: var(--line); }
+
+  /* ===== 平台代表作：四段经历可点击卡片 ===== */
+  .pcards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 30px 0 8px; position: relative; z-index: 1; }
+  .pcard {
+    appearance: none; -webkit-appearance: none; text-align: left; cursor: pointer; font: inherit;
+    background: rgba(255,255,255,.03); color: #f6f4ee;
+    border: 1px solid #4a463e; border-radius: 5px; padding: 20px 20px 18px;
+    transition: border-color .2s, background .2s, transform .2s;
+  }
+  .pcard:hover, .pcard:focus-visible { border-color: var(--accent); background: rgba(184,92,56,.10); transform: translateY(-3px); }
+  .pcard .pc-tag { font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: #d99a7c; font-weight: 700; }
+  .pcard h4 { font-size: 16px; font-weight: 700; margin: 9px 0 8px; letter-spacing: -.01em; }
+  .pcard p { font-size: 12.5px; color: #a8a298; line-height: 1.7; margin: 0; }
+  .pcard .pc-more { display: inline-flex; align-items: center; gap: 5px; margin-top: 14px; font-size: 11.5px; color: #d99a7c; font-weight: 600; }
+  .pcard .pc-more::after { content: "↗"; }
+  .pc-hint { font-size: 11.5px; color: #8a857b; margin: 8px 0 24px; position: relative; z-index: 1; }
+
+  /* 详情浮窗 */
+  .modal-mask { position: fixed; inset: 0; z-index: 200; background: rgba(18,17,15,.74); backdrop-filter: blur(4px); display: none; align-items: center; justify-content: center; padding: 24px; }
+  .modal-mask.open { display: flex; }
+  .modal { background: var(--surface); color: var(--ink); width: 100%; max-width: 620px; max-height: 86vh; overflow-y: auto; border-radius: 8px; padding: 34px 38px 30px; position: relative; box-shadow: 0 30px 80px rgba(0,0,0,.35); }
+  .modal-x { position: absolute; top: 16px; right: 18px; width: 34px; height: 34px; border: 1px solid var(--line); border-radius: 50%; background: transparent; cursor: pointer; font-size: 19px; color: var(--ink-3); line-height: 1; transition: color .18s, border-color .18s; }
+  .modal-x:hover, .modal-x:focus-visible { color: var(--accent); border-color: var(--accent); }
+  .modal-k { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+  .modal h4 { font-size: 24px; font-weight: 800; letter-spacing: -.03em; margin: 10px 0 6px; }
+  .modal .m-sub { font-size: 13px; color: var(--ink-3); margin-bottom: 22px; }
+  .modal .m-block { margin-bottom: 20px; }
+  .modal .m-block h5 { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent-dk); margin-bottom: 10px; }
+  .modal ul { list-style: none; display: grid; gap: 9px; }
+  .modal li { font-size: 13.5px; color: var(--ink-2); line-height: 1.7; padding-left: 18px; position: relative; }
+  .modal li::before { content: ""; position: absolute; left: 0; top: 10px; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+  .modal li b { color: var(--ink); font-weight: 700; }
+  .modal .m-note { font-size: 12.5px; color: var(--ink-3); background: var(--bg); border: 1px solid var(--line); border-radius: 5px; padding: 12px 14px; line-height: 1.7; margin-top: 4px; }
+
+  /* ===== Career (minimal timeline) ===== */
+  .career-grid { border-top: 1px solid var(--line); }
+  .job { display: grid; grid-template-columns: 150px 1fr; gap: 32px; padding: 24px 0; border-bottom: 1px solid var(--line); }
+  .job .when { font-size: 12.5px; color: var(--ink-3); font-weight: 600; padding-top: 3px; letter-spacing: .03em; }
+  .job .who { font-size: 15.5px; font-weight: 700; letter-spacing: -.01em; }
+  .job .who p { font-size: 13.5px; font-weight: 400; color: var(--ink-2); margin-top: 5px; line-height: 1.75; }
+
+  /* ===== Contact ===== */
+  .contact { margin: 88px 0 0; background: var(--dark); color: #f6f4ee; border-radius: var(--radius); padding: 54px 50px; position: relative; overflow: hidden; }
+  .contact::after { content: ""; position: absolute; left: -80px; bottom: -160px; width: 380px; height: 380px; background: radial-gradient(circle, rgba(184,92,56,.3) 0%, transparent 68%); pointer-events: none; }
+  .contact-in { display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; position: relative; z-index: 1; }
+  .contact .k { font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase; color: #d99a7c; font-weight: 700; }
+  .contact h3 { font-size: clamp(23px, 3vw, 32px); font-weight: 800; letter-spacing: -.03em; margin: 12px 0 8px; }
+  .contact p { color: #a8a298; font-size: 14px; }
+  .contact-ways { display: flex; flex-direction: column; gap: 10px; }
+  .cway { display: inline-flex; align-items: center; justify-content: space-between; gap: 28px; min-width: 240px; font-size: 14px; border-bottom: 1px solid #4a463e; padding-bottom: 7px; color: #e8e4dc; }
+  .cway:hover { color: #fff; border-color: var(--accent); }
+  .cway .go { color: var(--accent); }
+  .cway.solid { background: #f6f4ee; color: var(--dark); border: none; padding: 10px 16px; border-radius: var(--radius); justify-content: center; }
+  .cway.solid:hover { background: var(--accent); color: #fff; }
+
+  footer { padding: 46px 0 40px; text-align: center; color: var(--ink-3); font-size: 12px; }
+
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1); }
+  .reveal.in { opacity: 1; transform: none; }
+
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 44px; }
+    .hero { padding: 68px 0 60px; }
+    .expertise { grid-template-columns: 1fr 1fr; }
+    .exp:nth-child(odd) { border-left: none; padding-left: 0; }
+    .exp:nth-child(even) { border-left: 1px solid var(--line); }
+    .exp:nth-child(n+3) { border-top: 1px solid var(--line); }
+    .f-pillars { grid-template-columns: 1fr 1fr; gap: 16px 0; }
+    .f-pillars div:nth-child(3) { border-left: none; padding-left: 0; }
+    .pcards { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .wrap { padding: 0 20px; }
+    .nav-in { height: auto; flex-direction: column; align-items: stretch; gap: 0; padding-top: 10px; }
+    .nav-links { display: flex; gap: 20px; overflow-x: auto; white-space: nowrap; padding: 10px 0; -webkit-overflow-scrolling: touch; }
+    .nav-links::-webkit-scrollbar { display: none; }
+    .nav-resume { display: none; }
+    .sec-top { flex-direction: column; gap: 10px; }
+    .sec-top .note { text-align: left; }
+    .feature { padding: 34px 26px; }
+    .contact { padding: 40px 26px; }
+    .f-pillars { grid-template-columns: 1fr; }
+    .f-pillars div { border-left: none !important; padding-left: 0 !important; }
+    .job { grid-template-columns: 1fr; gap: 6px; }
+    .hero-actions .btn { flex: 1 1 auto; justify-content: center; }
+    .modal { padding: 30px 22px 24px; }
+    .modal h4 { font-size: 21px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .btn:hover, .flink:hover, .cway:hover { transform: none; }
+  }
+</style>
+</head>
+<body data-page-node-id="iZlanRzzEICxD2jim1qsZo">
+
+<nav data-page-node-id="H7amEYGBC6vBp0FUclVlM3">
+  <div data-page-node-id="qmKzmv1GYZFtYHA3o0zQDh" class="wrap nav-in">
+    <div data-page-node-id="gC7aYww6K63IMrtyqr0tYH" class="brand">谭启超 <span data-page-node-id="IwYa4O6F7fcOMEkT5SpflC">AI / 平台产品</span></div>
+    <div data-page-node-id="jDYPT7CwnLhF2ogcf7St6m" class="nav-links">
+      <a data-page-node-id="AQxZc8DBcQfSoAWiKdUCs5" href="#expertise"><span data-page-node-id="3OpnOBP1A2BY1b1NFmUC69" class="num mono">01</span>专业能力</a>
+      <a data-page-node-id="q1fWuqwmT6mDRKEb6qdWLj" href="#works"><span data-page-node-id="HhzCUFPuBrSjfF4Ye4aABC" class="num mono">02</span>作品展示</a>
+      <a data-page-node-id="vHKuoDeGF6dp1W5ZPx1X8x" href="#career"><span data-page-node-id="belsGzaphFDYIDECR2FsOD" class="num mono">03</span>职业轨迹</a>
+      <a data-page-node-id="kiDzzFxcsr8QPv95fh1HoY" href="#contact"><span data-page-node-id="Uy2AvLqJQemxO98COp8BZ0" class="num mono">04</span>联系方式</a>
+    </div>
+    <a data-page-node-id="s5jaYxTPIQ2zIEPbrjd5Fu" class="nav-resume" href="%E8%B0%AD%E5%90%AF%E8%B6%85-%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86-%E7%AE%80%E5%8E%86.pdf" download="">下载简历 ↗</a>
+  </div>
+</nav>
+
+<header data-page-node-id="GQT8PRBSrhIIBNNtDLvI0v" class="hero">
+  <div data-page-node-id="OhTd2LLC8JzNbwQMaWtTuR" class="wrap hero-grid">
+    <div data-page-node-id="S7e1T3imi7sQbsbVeHZVX5">
+      <div data-page-node-id="FLLJ64Z1ILTSMEUt5sYnxS" class="hero-mark" aria-hidden="true"><i data-page-node-id="haNVBDlvbiH9YS0w2jA0Vd"></i><i data-page-node-id="c4840nEc3qxLm9myk1dThc"></i><i data-page-node-id="LjuqXInAMAGrXY0qY21IeP"></i></div>
+      <h1 data-page-node-id="6UBK1uZzcq2yAJCHB4MAUp"><em data-page-node-id="Vxh0OnaGOurI9WjTpjYvZa">自驱型</em> · 平台产品 · <em data-page-node-id="fiVj2TV9kXw2AF1xpGKBTU">Owner</em></h1>
+      <p data-page-node-id="sHiaWvkh0FIZ6Gv6YqWlNL" class="hero-lead" style="white-space:pre-wrap">12 年 B 端产品，服务过中石化、三一、美的。专注平台 / 中台 / API 开放平台 / 企业数字化； 正以 RAG、Agent、大模型解决真实业务问题。</p>
+      <div data-page-node-id="hMgWCPBtMghUimGWh5ygRM" class="keywords">
+        <span data-page-node-id="xwkcqZEMG4jbNu0mxrcAla">5 年团队管理</span>
+        <span data-page-node-id="AB74oZVunSequR9eJiITT9">企业级平台 / 中台</span>
+        <span data-page-node-id="WOZ6RMTLOxqs3Qt9E0xrHP">业务抽象 / 能力复用</span>
+        <span data-page-node-id="Yub7BqglyXGtoKfoAGen2C">PaaS</span>
+        <span data-page-node-id="r4fuZ0BdFLSV533otT5uUD2">流程引擎</span>
+        <span data-page-node-id="ta5vF2acTokXpqdCHoEufV">Agent / AI 应用落地</span>
+      </div>
+      <div data-page-node-id="c3a9PEPSscPBThut6RI8gG" class="hero-actions"><a data-page-node-id="bZJuBXSIbaXlLyCpvJMNK7" class="btn btn-solid" href="#works">浏览作品 <span data-page-node-id="cGUrr4oHNPTL3pepTwKiKk">→</span></a><a data-page-node-id="7HCoYqkyOZvUPIzFy0Quma" class="btn btn-line" href="%E8%B0%AD%E5%90%AF%E8%B6%85-%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86-%E7%AE%80%E5%8E%86.pdf" download=""><svg data-page-node-id="Gc2a25xcUOQXECrcBXTwqB" viewBox="0 0 24 24"><path data-page-node-id="rMFBOvPTawGowdykG2KiTv" d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v3h16v-3"></path></svg>下载简历</a></div>
+    </div>
+    <aside data-page-node-id="XcQfl8uyAQ32YfC21yAIoG" class="profile">
+      <div data-page-node-id="hMuArptV5DcX8KFrqWvx7H" class="profile-status"><span data-page-node-id="LYJi0XMNiwS5k87z39wJ2F" class="dot"></span>Open to work</div>
+      <dl data-page-node-id="uc55mybZLZkZb6CJWhsHBF">
+        <div data-page-node-id="cS1wuZFcDap4PuKC0JSTl0"><dt data-page-node-id="7cLj3ZPwWTPxtG2p0LWYPu">求职方向</dt><dd data-page-node-id="c3oY1PgaZQN5pTrvmGu0aM">产品经理 · AI、平台、数字化</dd></div>
+        <div data-page-node-id="VHWZsnXB2b09MbHT51W7KP"><dt data-page-node-id="kZzjsfJI54wyq08aAFhUm2">产品经验</dt><dd data-page-node-id="as62wYzsWgrVC6izQMusmP">12 年 B 端</dd></div>
+        <div data-page-node-id="RjAzuiMGXa19ZHIosL9cdE"><dt data-page-node-id="yyHFRUEYP8VCK4hqNRHQWl">团队管理</dt><dd data-page-node-id="TiNkNoHzGbxdF5GCfgUr4i">5 年 · 最大 17 人</dd></div>
+        <div data-page-node-id="ruiixtRHAA1yESg5CgPzgE"><dt data-page-node-id="Q2TU73BxAM0bl8TNqP3JXm">服务企业</dt><dd data-page-node-id="vtDsXp4HY7QkMBbOeHSrcV">中石化 · 三一 · 美的</dd></div>
+        <div data-page-node-id="ElpzAHKopIHxsWCZ9j3APt"><dt data-page-node-id="iQ5Bh1gR7WGqFPsSkohq8S">现居城市</dt><dd data-page-node-id="GU4nD7c4ZEJPxfcaBqDEgW">广州</dd></div>
+      </dl>
+      <a data-page-node-id="YBnGyzJwkD69fewSrhiEwc" class="mail" href="mailto:15913187721@qq.com">15913187721@qq.com</a>
+    </aside>
+  </div>
+</header>
+
+<main data-page-node-id="tA72WUSYAX6UbF0mWCvZqI">
+  <!-- 专业能力 -->
+  <section data-page-node-id="2lSabgOwolaqxtT8NuZOA2" id="expertise">
+    <div data-page-node-id="p33Cg0FW30dFlzFJTlMNZP" class="wrap">
+      <div data-page-node-id="3cDjGCSO4fKMatYx6zwDqC" class="sec-top reveal">
+        <div data-page-node-id="MhOBitkBNy0gceQFSkuriQ">
+          <div data-page-node-id="QD3AKnlDmKGB36ZnGysJML" class="sec-label">01 — Expertise</div>
+          <h2 data-page-node-id="bCRlFk9i8enxsa2GfsiiwP">专业能力</h2>
+        </div>
+      </div>
+      <div data-page-node-id="bSmK1z4on3YUc2Kf5Y15WA" class="expertise reveal">
+        <div data-page-node-id="HN8OryIbpAUCM5ad68vUZ5" class="exp">
+          <div data-page-node-id="bj1aTOQFMJqBgoPJYyCbqi" class="n mono">01 /</div>
+          <h4 data-page-node-id="H4Rbw72xhbkVERwBntKlvX">平台架构与落地</h4>
+          <p data-page-node-id="jVZ2o52TJXx8YwK2yZBgG0">复杂业务抽象、平台能力沉淀；流程 / 表单 / 规则引擎从架构设计到商用落地。</p>
+        </div>
+        <div data-page-node-id="b7DMhyl2XRGMUMOwXyqBhB" class="exp">
+          <div data-page-node-id="iDUk0z3s1WmjwPqflBw2SW" class="n mono">02 /</div>
+          <h4 data-page-node-id="TLxKS3KoGOwlifZDGu5WbX">开放平台与生态</h4>
+          <p data-page-node-id="n6KB3wKi0E5RAnmCxD6UwN">API 上架审核、订阅授权、调用链路、开发者门户——企业级开放平台全链路。</p>
+        </div>
+        <div data-page-node-id="DLP3MPEh3Tfa8FzrbgrThT" class="exp">
+          <div data-page-node-id="zQ0DlbFXFTXhns70NTqEBM" class="n mono">03 /</div>
+          <h4 data-page-node-id="zRFBW62kDV8JXwagmCiBMa">AI 落地实践</h4>
+          <p data-page-node-id="R02E2pcKXKjaY6lRx4dJ8S">RAG / 知识库、Agent、提示词工程、NVIDIA NIM 集成；效果、成本、延迟的真实取舍。</p>
+        </div>
+        <div data-page-node-id="7Qk02YG8pGI6tEBQEpOPvI" class="exp">
+          <div data-page-node-id="Va1rd6PuW23jDTWoZUcH1S" class="n mono">04 /</div>
+          <h4 data-page-node-id="DiVuAz7eQEYE62dT1VcW2g">复杂交付管理</h4>
+          <p data-page-node-id="0nqDQ2S2z8N9ZjNg1IqjcS">Scrum 敏捷、SOW 与解决方案设计；协调售前、架构、研发、实施多线并行交付。</p>
+        </div>
+      </div>
+      <p data-page-node-id="aOG7AfngUQoZCnMyl7gOyV" class="exp-note reveal">从平台架构、开放生态到 AI 落地与复杂交付的完整能力栈。</p>
+    </div>
+  </section>
+
+  <!-- 作品 -->
+  <section data-page-node-id="dH3tu9A08OSg25q4AJIUId" id="works">
+    <div data-page-node-id="Hxt3CGeoshgnQGAHTWmLL8" class="wrap">
+      <div data-page-node-id="8u3biiVjvA873rIfwLnibQ" class="sec-top reveal">
+        <div data-page-node-id="8HeEl8ANUSN6NEKwHc7ZU9">
+          <div data-page-node-id="nuqBz1lDZLAHrowWGXTp3w" class="sec-label">02 — Selected Works</div>
+          <h2 data-page-node-id="bufgYQH7IDfqYAQ7SbWRyv">作品展示</h2>
+        </div>
+        <p data-page-node-id="kghNB8NPIFKbrnelIvmZFP" class="note">共 3 个作品：前两个为 AI 作品，可在线点开、体验、提问；第三个为企业平台代表作，点开卡片查看各段经历的具体做法。</p>
+      </div>
+
+      <!-- 主作品 -->
+      <article data-page-node-id="eBO07diutBbipXRSTBluuc" class="feature reveal">
+        <div data-page-node-id="FRIuee2BI20HpQuXPWkI6l" class="f-top">
+          <span data-page-node-id="r4fuZ0BdFLSV533otT5uUD" class="f-no mono">作品 / 01</span>
+          <span data-page-node-id="HidXE7zZeXXBCncBxQ6Unc" class="f-kind">Flagship · 可在线体验</span>
+        </div>
+        <h3 data-page-node-id="H1goIfRvx9XHGTG56cIWBE">展馆智能导览 Demo</h3>
+        <p data-page-node-id="qPWAhbG2zNpR4v2RQR3dTo" class="f-desc">面向展馆与会展场景的 AI 导览智能体：观众扫码进展品页，RAG 限定知识库问答配合 TTS 语音讲解；展方后台五模块运营，其中 AI 内容生成将零散资料一键转为多版本讲解词与 FAQ，并以「未回答问题回流」把 AI 幻觉风险翻转成运营闭环。附完整解决方案书与商业化测算。</p>
+        <div data-page-node-id="4gtLQMOzYdzHx0sKWN12vF" class="f-pillars">
+          <div data-page-node-id="VzaNSZBTKMyyETr1kLAhn3"><b data-page-node-id="WfqmAHQeO4ykRVWnCbphrI">RAG 问答</b><span data-page-node-id="JAwc5NuXaZVGXdllUV3jzV">知识库限定 + 来源标注，答不上不硬答</span></div>
+          <div data-page-node-id="p5E7D2zuZQOKgWcpJbAVGU"><b data-page-node-id="FFc4Ob5whExAblePUAw9db">TTS 语音导览</b><span data-page-node-id="O9hX53ZccInHGUVATfY775">讲解词分段播报，自动导览动线</span></div>
+          <div data-page-node-id="nwcCbw7Bx4ayDjuumOlzMD"><b data-page-node-id="4CHmKltrOVLSQvdZOqOYZr">AI 内容生成</b><span data-page-node-id="P27pfaDdORnLBg8aRXn8S7">资料转讲解词 + FAQ，成本显著下降</span></div>
+          <div data-page-node-id="97CWDkPwpGV39KNcCTkwPS"><b data-page-node-id="HcX37oq6tHVKAylfSV6syO">效果回流闭环</b><span data-page-node-id="v5mGktdxdcl4A1g4VN9hUx">未回答问题回流，知识库持续迭代</span></div>
+        </div>
+        <div data-page-node-id="6hd4flfklml6Lc1aOu5H2x" class="f-links">
+          <a data-page-node-id="Go2rlqfA3J0hKesbCk9qSa" class="flink flink-light" href="https://museum-guide-demo.app.workbuddy.host/exhibit.html?id=E01&amp;sharecode=JNQWKECSMP" target="_blank" rel="noopener">观众端 H5 <span data-page-node-id="uID1GXG5MvEYJOuIap99E2">↗</span></a>
+          <a data-page-node-id="qPCDTQPHezc08xB7lswwWn" class="flink flink-light" href="https://museum-guide-demo.app.workbuddy.host/admin.html?sharecode=JNQWKECSMP" target="_blank" rel="noopener">展方后台 <span data-page-node-id="lBAOsWLlP4gi3Dapsgue8D">↗</span></a>
+          <a data-page-node-id="xIlm9WhUtkybzcyflZuNhu" class="flink flink-ghost" href="https://museum-guide-demo.app.workbuddy.host/solution.html?sharecode=JNQWKECSMP" target="_blank" rel="noopener">解决方案 + 商业化测算 <span data-page-node-id="IC43InLWDJiLzwHDl1MnaA">↗</span></a>
+          <a data-page-node-id="q0COHiYMBsXtf894CmtxDg" class="flink flink-ghost" href="https://museum-guide-demo.app.workbuddy.host/?sharecode=JNQWKECSMP" target="_blank" rel="noopener">Demo 首页 <span data-page-node-id="35i3EfUmhwTzKkbgm8c2j8">↗</span></a>
+        </div>
+        <div data-page-node-id="toemXz6BoF3uSKWAAQSWeS" class="f-tags">
+          <span data-page-node-id="QHhZsPlQS8NxpnVSMtpsMH">RAG</span><span data-page-node-id="32xWzIuqEck6Mm1KOry6dv">AI Agent</span><span data-page-node-id="7AmfF2Zb64PDXHaEFLdAXk">TTS</span><span data-page-node-id="Zd4FUR2xzd8KGBSx7Fwoy4">AIGC 内容生产</span><span data-page-node-id="FFcYPSoU04SrDKwrIhky9s">效果评估闭环</span><span data-page-node-id="qdE3ZkEA9lWsXHw6Om0ExA">mock / live 双模式</span><span data-page-node-id="kwBhzORWRURwAoPgLN3TAQ">商业化测算</span><span data-page-node-id="PKMyZR5ZxBoiAv6vpAL8iE">0 → 1 MVP</span>
+        </div>
+      </article>
+
+      <!-- 主作品 2：AI 工作台（对等浅色卡） -->
+      <article data-page-node-id="5enYvoRaDyGOFIXbovRgP6" class="feature feature-light reveal" style="margin-top:18px">
+        <div data-page-node-id="7ETQlCnMEbWvOMjfKLhMqt" class="f-top">
+          <span data-page-node-id="D7iyxJ3vraBJ09SJCAtnz5" class="f-no mono">作品 / 02</span>
+          <span data-page-node-id="bC6AtP1tKvDamrpdwv3Dfk" class="f-kind">个人实践 · 可在线体验</span>
+        </div>
+        <h3 data-page-node-id="bRnwnkVGLKHrVwYA5Al5jq">产品经理 AI 工作台</h3>
+        <p data-page-node-id="fCBhIDhh0NadAYzjKHC0XN" class="f-desc">面向产品经理日常工作场景，以 Vibe Coding 搭建的 AI 工作台，设计接入 AI 触点（需求分析、方案设计与评审等环节）。以契约体系管理、产品记忆点两级注入 Prompt 收敛模型输出，接入 NVIDIA NIM 等模型服务，并用 SSE 流式记录生成过程。</p>
+        <div data-page-node-id="VxbB1HV7TkPCbDDF08mReg" class="f-pillars">
+          <div data-page-node-id="F81Ic3pI1nnRexJX9yu5Pr"><b data-page-node-id="yyVcJ5PwNS1pNrtFI8MmbM">全链路流程</b><span data-page-node-id="H0MsWbABZIxunP7Y6dzV4v">需求 → 方案 → 评审 → 版本 → 代码 → 发布 → 运营</span></div>
+          <div data-page-node-id="kJD1bXK9tJDkVZnFG7s1RO"><b data-page-node-id="bH3a0olxNzkN5rrNd5yXn2">AI 辅助</b><span data-page-node-id="uijXs3K5G3hEjxtaWdcLyn">需求分析 / 方案生成 / AI 评审 / 代码审查</span></div>
+          <div data-page-node-id="9S4WI2jzB2bvX8zpgNf6ON"><b data-page-node-id="0oKKV4W6KuKrGCMP6F9UDA">输出收敛</b><span data-page-node-id="UKBsrXa4WEQhUAZAM19R5A">AI 契约 + 产品记忆点双级注入</span></div>
+          <div data-page-node-id="63RZOD9llqkzgH8Nu6O5aT"><b data-page-node-id="WmXvWsmKRrEFczuMK8NXkx">模型集成</b><span data-page-node-id="NfsvRPUZDhQOMI7a18JBE1">NVIDIA NIM 服务 + SSE 流式过程</span></div>
+        </div>
+        <div data-page-node-id="BBVhhSJ20tTcHftx13ziDv" class="f-links">
+          <a data-page-node-id="mMRFmm03FnN0pNDFkVVmAC" id="pm-demo-link" class="flink flink-dark" href="https://tanqichao.app.workbuddy.host/pm/?sharecode=EEQ4KWD5NC" target="_blank" rel="noopener">在线体验工作台 <span data-page-node-id="HtULCCrOgultl06gy2MPRC">→</span></a>
+        </div>
+        <div data-page-node-id="aJohC9Z5o7Tk1iRwBxxKR4" class="f-tags">
+          <span data-page-node-id="ocVpTkjZXUEIiLXRlGOitK">Vibe Coding</span><span data-page-node-id="2rLcDFZ2RNNUtDeRl2cWSz">AI 契约工程</span><span data-page-node-id="ENv3fGuc6GQoaxurrf21DH">RAG / 记忆注入</span><span data-page-node-id="WzgHw5Hh9Kk3xXBpm2gQmC">NVIDIA NIM</span><span data-page-node-id="Ay9kEJ0fj3DcdqC89NOpsh">SSE 流式</span>
+        </div>
+      </article>
+
+      <!-- 主作品 3：企业平台代表作（与作品1/2同构的 feature 卡） -->
+      <article data-page-node-id="l1pVwFGLjI4Ihld15OaSge" class="feature reveal" style="margin-top:18px">
+        <div data-page-node-id="FRIuee2BI20HpQuXPWkI6l3" class="f-top">
+          <span data-page-node-id="XkSTtkChMtASjsBZScAlA3" class="f-no mono">作品 / 03</span>
+          <span data-page-node-id="tNlc4s1QjbGyk3a3dkcQdV" class="f-kind">平台代表作 · 商用落地</span>
+        </div>
+        <h3 data-page-node-id="DrTEKLzFXpEE5noqtRIGB8">企业级平台 · 基础服务产品</h3>
+        <p data-page-node-id="0c5CKMFoCDuEqEUAOzOh5X" class="f-desc">横跨 iPaaS、物联网、新零售三个平台阶段，规划与建设的平台产品及基础服务。从业务应用中抽象共性需求，沉淀为可被各业务线复用的平台能力。</p>
+
+        <div data-page-node-id="eyWz9VYnuFmYbM8TgdzoU8" class="pcards">
+          <button data-page-node-id="32PN3XeNbN7IWIkIpENpov" type="button" class="pcard" data-detail="meiyun">
+            <span data-page-node-id="3IWpVpeERAAVC2Z4m2Frv7" class="pc-tag">美云智数 · 2018—2020</span>
+            <h4 data-page-node-id="7ZJesSZByZLlzjxwfV2Cob">PaaS平台</h4>
+            <p data-page-node-id="E9EB6LhiwZmiTCNHXrkpcJ">从0 → 1自研 BPM （涵盖底层流程、表单、规则三引擎） ，支撑业财一体化、SRM、MES、APS等应用产品。</p>
+            <span data-page-node-id="HP1dSnioAc9IuwXE2UJTKv" class="pc-more">查看做法</span>
+          </button>
+          <button data-page-node-id="ogHxb9F5gCO1B8RP468RkG" type="button" class="pcard" data-detail="rootcloud">
+            <span data-page-node-id="3y0exw4AfL6bPqiMQzEzJc" class="pc-tag">树根互联 · 2021—2023</span>
+            <h4 data-page-node-id="7RNjCmBZjm48aLM24ovGm9">物联网平台基础服务</h4>
+            <p data-page-node-id="tASd5IKJ3J41UFmZxroSix">消息服务、数据订阅、报警中心、API 平台</p>
+            <span data-page-node-id="S6aZUPuQnAh79dIbE4wrcF" class="pc-more">查看做法</span>
+          </button>
+          <button data-page-node-id="jtoqjcsFUzzNCz56ySn4GP" type="button" class="pcard" data-detail="guande">
+            <span data-page-node-id="ikouxu9MGhdcJULfcQKJa1" class="pc-tag">冠德数智 · 2023—至今</span>
+            <h4 data-page-node-id="14HAv6yzINg1Toem2ONeuF">新零售平台基础</h4>
+            <p data-page-node-id="BitUWJiuUz9B314VLsndX3">审批中心(基于flowable)、消息中心（消息发送、渠道聚合）、能力开放中心、订单中心。以及“长”在平台基础上的检维修应用。</p>
+            <span data-page-node-id="sbJ72B9aPpnneZl7B37f0F" class="pc-more">查看做法</span>
+          </button>
+          <button data-page-node-id="mt1lYlQXl8Etm3qnbov3Y2" type="button" class="pcard" data-detail="flowable">
+            <span data-page-node-id="OFKvzsPy8hp2xI4UkTG91x" class="pc-tag">技术辨析</span>
+            <h4 data-page-node-id="s6QHBhC6HguxyawLiFZv8v">审批中心 vs BPM</h4>
+            <p data-page-node-id="sjfAe4aemGKSJhK9Xb6EDQ">与自研 BPM 不同的技术路线，看清两者边界。</p>
+            <span data-page-node-id="PZqZfNZGJPju1ncmoWxekS" class="pc-more">查看区别</span>
+          </button>
+        </div>
+        <p data-page-node-id="BfpnWlTNYO4krpRC0ADVoO" class="pc-hint">共 4 张卡片，点击展开对应平台的具体做法。</p>
+
+        <div data-page-node-id="nRUVwX6J0x4EgljzEZUbE1" class="f-tags">
+          <span data-page-node-id="sROsZftu6thhpv5kXjWT4e">PaaS / 中台</span><span data-page-node-id="YkZwZGhn1va5p3vVeAQSUa">自研 BPM</span><span data-page-node-id="B5M9CBQAlWwtf1VmZiMIGB">Flowable 二开</span><span data-page-node-id="xyNByubpYHa8XRUI8BlM5A">API 管理与开放</span><span data-page-node-id="d2DC0FVJ85em5KkR24Man9">开放平台生态</span><span data-page-node-id="RoU7W2yjMgG3lmtlpOSuyU">消息 / 数据订阅 / 报警</span><span data-page-node-id="rxQbGsuSd4FjZsc975qUgM">订单中心</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 经历 -->
+  <section data-page-node-id="GeLYDS3E58ZUAyvkI2pTTv" id="career">
+    <div data-page-node-id="OXDqt2MuFyxSi3m43Y2NKB" class="wrap">
+      <div data-page-node-id="Q9w45ZvqmsJf2JO2kw80pQ" class="sec-top reveal">
+        <div data-page-node-id="tb0i119Ni5vo6KGi0X8kYC">
+          <div data-page-node-id="ExqFE7YENb1KuPyGvkD6kd" class="sec-label">03 — Career</div>
+          <h2 data-page-node-id="KVikBDfx3N9kh3FjtaHlL9">职业轨迹</h2>
+        </div>
+        <p data-page-node-id="JVcF9UGHIi2BrlKNoaPElY" class="note">从企业内部系统到行业级平台，一路向「可复用的平台能力」收拢。</p>
+      </div>
+      <div data-page-node-id="o3RALaKFrTNpH3Z67rQrRm" class="career-grid reveal">
+        <div data-page-node-id="iyrxI52ulS2OWxWnsBuAq6" class="job">
+          <div data-page-node-id="FvtWwU5ZMzE55AY7pNCN8Q" class="when">2023.11 — 至今</div>
+          <div data-page-node-id="wmTFhj0fWOVaBoIiDRe6ns" class="who">冠德数智科技 · 中台产品经理
+            <p data-page-node-id="vMToqfavrJrNPkBdsfuFyI">新零售平台基础服务（服务中石化）：从 0 建设审批中心、消息中心，负责 能力开放平台 API 全生命周期；兼任订单中心产品，支持跨业态、跨业务的订单服务；兼任检维修应用产品负责人，完成建设并开展全国试点。</p>
+          </div>
+        </div>
+        <div data-page-node-id="Af5QJZcWEMOrG2jbQSDSOy" class="job">
+          <div data-page-node-id="fnwzGy61uZCujSmz4W6unl" class="when">2021.04 — 2023.11</div>
+          <div data-page-node-id="Ag4PKRy4AYWpGftLxDQlkh" class="who">树根互联 · 高级产品经理
+            <p data-page-node-id="Wx045Pf9zM7xIxz3K8Bozc">根云平台基础服务产品线 Owner（服务三一重工 IoT 、C端智能产品场景）：消息中心、数据订阅、报警中心、文档中心、API 开放平台的规划与建设，实现设备数据互联闭环。</p>
+          </div>
+        </div>
+        <div data-page-node-id="ulx5jZ6H1wR7bg0tJ5zcJS" class="job">
+          <div data-page-node-id="dZcxSDEbw7obcBLK2KPrnG" class="when">2018.09 — 2020.08</div>
+          <div data-page-node-id="VlfekASFC9dSvaKyiHW5jg" class="who">美云智数 · 平台产品经理
+            <p data-page-node-id="2QVu0i3s8Dtxh2XwMRCv1J">美云 PaaS 平台产品线负责人， 协同与首席架构师共建 PaaS 核心引擎，主导 BPM 流程引擎自主研发并商用。美的集团中台流程云平台项目负责人，支撑集团内部多事业部业务和应用。</p>
+          </div>
+        </div>
+        <div data-page-node-id="hBXWcyqMqVXOKpBjWtguBY" class="job">
+          <div data-page-node-id="C9cjA2Rzo9xODD1xDpuNem" class="when">2017.07 — 2018.09</div>
+          <div data-page-node-id="qOSpkmaIliBz4SVS0fURGx" class="who">四三九九 · 产品经理
+            <p data-page-node-id="Gnq2fORQQyv3hRDQBPGuMy">OM / HRM 产品线：内推与绩效模块从 0 到 1，OKR + 360° 绩效系统，招聘流程线上化。</p>
+          </div>
+        </div>
+        <div data-page-node-id="kCnoWx9Lm1quHke7V1jTHX" class="job">
+          <div data-page-node-id="EDL6wNjFd3z2arUWJoQuIw" class="when">2014.07 — 2017.02</div>
+          <div data-page-node-id="2FKdbIrd7uDFv1S5cVGuxL" class="who">多益网络 · 产品经理
+            <p data-page-node-id="HCC1blUjEP2Z3eAmS1z6i2">游戏支持、OA、通用技术三条产品线：智能客服 2.0、OA 平台轻量化改造，从 0 到 1 策划消息中心与 API 接口中控平台。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 联系 -->
+  <section data-page-node-id="dAaDrBJhrq0CtpbZWUJt6e" id="contact">
+    <div data-page-node-id="yrgR4WF3iFJJFQ1TfN2pme" class="wrap">
+      <div data-page-node-id="Re1FlLYGDTaHqoz60CZhMp" class="contact reveal">
+        <div data-page-node-id="1HMplxb2NhNqORlU7zrelB" class="contact-in">
+          <div data-page-node-id="WhdRoY62dQw0fiSv8mkhKl">
+            <div data-page-node-id="D45UPtlhLXZFiKh88BYPuL" class="k">04 — Get in touch</div>
+            <h3 data-page-node-id="eotUBaenZw0FHZYyfS4Ce3">正在寻找：产品经理（AI / 平台 / 数字化）</h3>
+            <p data-page-node-id="GxiPoDJ6EYiMYFGd61tWfL">期望城市广州 · 期待数字化、AI Agent、平台产品机会</p>
+          </div>
+          <div data-page-node-id="z0CBCltw8VTttkJvDBqhBi" class="contact-ways">
+            <a data-page-node-id="K60nbeKGxyhFqYwcFNr4xf" class="cway" href="tel:15913187721">159 1318 7721 <span data-page-node-id="DoPFJBFTNQ1PLor5CHb1pj" class="go">→</span></a>
+            <a data-page-node-id="k1APtyU2LAhC6WoBw9dPoU" class="cway" href="mailto:15913187721@qq.com">15913187721@qq.com <span data-page-node-id="v3SwJJuBp9tQXVwvxbCXFl" class="go">→</span></a>
+            <a data-page-node-id="ZPyaWbisEJM9VJ79vHROQn" class="cway solid" href="%E8%B0%AD%E5%90%AF%E8%B6%85-%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86-%E7%AE%80%E5%8E%86.pdf" download="">下载完整简历 ↓</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer data-page-node-id="kxWcuRUz1VJKUNVUiTkd8R">
+  <div data-page-node-id="v0EBLrXEUz6u8WoOXcZ8V6" class="wrap mono">© 2026 谭启超 · Product Portfolio · Built with AI-assisted development</div>
+</footer>
+
+<!-- 平台代表作详情浮窗 -->
+<div data-page-node-id="nmjWnHfMlZv6teXgPcI9AM" class="modal-mask" id="pmModal" aria-hidden="true">
+  <div data-page-node-id="6sE1ikFvjR72zfL9ADut4I" class="modal" role="dialog" aria-modal="true" aria-labelledby="pmModalTitle">
+    <button data-page-node-id="MYkemTTAZhqFJ4BhgJ5SKi" type="button" class="modal-x" id="pmModalClose" aria-label="关闭">×</button>
+    <div data-page-node-id="JE7At8QaRaixpyYH18YvuC" class="modal-k" id="pmModalK"></div>
+    <h4 data-page-node-id="7zOeomhs9qqPI2OtGug71d" id="pmModalTitle">审批中心 vs BPM</h4>
+    <div data-page-node-id="kR9sDJCNrwpE8HBaYazmIY" class="m-sub" id="pmModalSub" style="white-space:pre-wrap">自研 BPM ，从 0 自主研发并商用</div>
+    <div data-page-node-id="QiBMz33fPdISSVCk9jC2G2" id="pmModalBody"></div>
+  </div>
+</div>
+
+<script data-page-node-id="Dz0ArZHCJEfhA0Dryipxdg" data-pnid-children="GSMDU7J2mUItjw9H7ZQzpY">
+  var items = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: .08 });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add('in'); });
+  }
+  // GitHub Pages 静态版：工作台链接固定指向 WorkBuddy Sites（带访问码）
+
+  // 平台代表作：四段经历详情
+  var platformDetails = {
+    meiyun: {
+      k: '美云智数 · 2018 — 2020',
+      t: '自研 BPM 流程引擎',
+      sub: '自研 BPM，从 0 自主研发并商用 · 另负责美的集团中台流程云平台',
+      blocks: [
+        { h: '怎么做的', items: [
+          '从多个 SaaS 应用产品中<b>抽象共性需求</b>，沉淀为可复用的平台服务能力。',
+          'BPM <b>完全自研</b>，一年内完成研发并商用。',
+          '另负责<b>美的集团中台流程云平台</b>（与自研 BPM 为两个不同产品），建设公有云 / 私有云流程云，支撑美的集团多事业部共性需求，减少业务线重复研发。',
+          '按流程干系人分模块：<b>应用开发集成、流程管理、IT 流程运维</b>各有对应能力。',
+          '由<b>流程引擎、表单引擎、规则引擎</b>组合支撑，与首席架构师共建 PaaS 核心引擎。'
+        ]}
+      ],
+      note: '这是「自研引擎」路线：三套引擎自主可控，与后续审批中心的 Flowable 二开是两种不同技术路径。'
+    },
+    rootcloud: {
+      k: '树根互联 · 2021 — 2023',
+      t: '物联网平台基础服务',
+      sub: '根云平台基础服务产品线 Owner · 服务三一重工 IoT 场景',
+      blocks: [
+        { h: '负责范围', items: [
+          '<b>API 平台</b>：平台能力的接口开放与治理。',
+          '<b>消息服务</b>：统一的消息触达能力。',
+          '<b>数据订阅服务</b>：设备数据订阅与流转。',
+          '<b>报警中心</b>：告警管理与处置。'
+        ]}
+      ],
+      note: '四条基础服务共同支撑设备数据互联闭环，属于根云平台的基础服务层。'
+    },
+    guande: {
+      k: '冠德数智 · 2023 — 至今',
+      t: '新零售平台基础',
+      sub: '新零售平台基础能力建设 · 服务中石化',
+      blocks: [
+        { h: '负责范围', items: [
+          '<b>审批中心</b>：支撑平台内各类审批流程。',
+          '<b>消息中心</b>：统一消息能力。',
+          '<b>能力开放中心</b>：API 管理与开放。',
+          '<b>订单中心</b>：兼任订单中心产品，设计出<b>跨业态、跨业务</b>的订单中心。'
+        ]}
+      ],
+      note: '另兼任检维修应用产品负责人，完成建设并开展全国试点。'
+    },
+    flowable: {
+      k: '技术辨析 · 流程类产品',
+      t: '审批中心 Flowable 二开 vs 自研 BPM',
+      sub: '同为流程类产品，两段经历采用了不同的技术路线',
+      blocks: [
+        { h: '冠德数智 · 审批中心（二开路线）', items: [
+          '底层基于 <b>Flowable</b>，内核调度保留在 Flowable 底层服务。',
+          '上层角色化配套功能、增强体验功能为自研。',
+          '支持多种异构集成模式。'
+        ]},
+        { h: '美云智数 · BPM（自研路线）', items: [
+          '流程引擎、表单引擎、规则引擎<b>全部自研</b>。',
+          '从 0 自主研发并商用，支撑业财一体化、SRM、MES、APS 等应用。'
+        ]}
+      ],
+      note: '一个是基于成熟内核二次开发、聚焦业务增强；一个是全栈自研、从引擎层自主构建——按场景与投入选择不同路线。'
+    }
+  };
+
+  var pmModal = document.getElementById('pmModal');
+  var pmMask = pmModal;
+  function openPmDetail(key) {
+    var d = platformDetails[key];
+    if (!d || !pmModal) return;
+    document.getElementById('pmModalK').textContent = d.k;
+    document.getElementById('pmModalTitle').textContent = d.t;
+    document.getElementById('pmModalSub').textContent = d.sub;
+    var html = '';
+    d.blocks.forEach(function (b) {
+      html += '<div class="m-block"><h5>' + b.h + '</h5><ul>';
+      b.items.forEach(function (it) { html += '<li>' + it + '</li>'; });
+      html += '</ul></div>';
+    });
+    if (d.note) html += '<div class="m-note">' + d.note + '</div>';
+    document.getElementById('pmModalBody').innerHTML = html;
+    pmModal.classList.add('open');
+    pmModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    document.getElementById('pmModalClose').focus();
+  }
+  function closePmDetail() {
+    if (!pmModal) return;
+    pmModal.classList.remove('open');
+    pmModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+  document.querySelectorAll('.pcard').forEach(function (card) {
+    card.addEventListener('click', function () { openPmDetail(card.getAttribute('data-detail')); });
+  });
+  var pmClose = document.getElementById('pmModalClose');
+  if (pmClose) pmClose.addEventListener('click', closePmDetail);
+  if (pmMask) pmMask.addEventListener('click', function (e) { if (e.target === pmMask) closePmDetail(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closePmDetail(); });
+</script>
+
+
+</body></html>
