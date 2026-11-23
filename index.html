@@ -195,6 +195,50 @@
   .modal li b { color: var(--ink); font-weight: 700; }
   .modal .m-note { font-size: 12.5px; color: var(--ink-3); background: var(--bg); border: 1px solid var(--line); border-radius: 5px; padding: 12px 14px; line-height: 1.7; margin-top: 4px; }
 
+  /* ===== 作品区：纵向手风琴列表（默认收起，一次展开一个，无横向滚动） ===== */
+  .work-tools { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; flex-wrap: wrap; }
+  .work-filters { display: inline-flex; gap: 4px; }
+  .work-filters button {
+    font: inherit; font-size: 12.5px; padding: 6px 14px; border-radius: 999px;
+    border: 1px solid var(--line); background: transparent; color: var(--ink-2);
+    cursor: pointer; transition: all .18s;
+  }
+  .work-filters button:hover { border-color: var(--accent); color: var(--ink); }
+  .work-filters button.active { background: var(--dark); border-color: var(--dark); color: #fff; }
+  .work-hint { font-size: 12px; color: var(--ink-3); }
+
+  .work-acc { border-top: 1px solid var(--line); }
+  .work-head {
+    font: inherit; width: 100%; text-align: left; cursor: pointer;
+    display: grid; grid-template-columns: 52px 1fr auto 28px; align-items: center; gap: 16px;
+    background: transparent; border: none; border-bottom: 1px solid var(--line);
+    padding: 20px 18px; color: var(--ink); transition: background .18s;
+  }
+  .work-head:hover { background: var(--surface); }
+  .work-head[hidden] { display: none; }
+  .wh-no { font-size: 13px; font-weight: 700; color: var(--accent); letter-spacing: .06em; }
+  .wh-main { min-width: 0; }
+  .wh-main b { display: block; font-size: 16px; font-weight: 700; letter-spacing: -.01em; }
+  .wh-main em {
+    display: block; font-style: normal; font-size: 12.5px; color: var(--ink-3);
+    margin-top: 3px; line-height: 1.5; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .wh-kind {
+    font-size: 11px; color: var(--ink-3); border: 1px solid var(--line);
+    border-radius: 999px; padding: 3px 10px; white-space: nowrap;
+  }
+  .wh-arrow {
+    width: 26px; height: 26px; border: 1px solid var(--line); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; font-size: 16px;
+    color: var(--ink-3); line-height: 1; transition: transform .2s, border-color .18s, color .18s;
+  }
+  .work-head:hover .wh-arrow, .work-head.open .wh-arrow { border-color: var(--accent); color: var(--accent); }
+  .work-head.open { background: var(--surface); box-shadow: inset 3px 0 0 var(--accent); }
+  .work-head.open .wh-arrow { transform: rotate(45deg); }
+  .work-item { display: none; margin-top: 0 !important; }
+  .work-item.is-open { display: block; animation: wtFade .32s ease; }
+  @keyframes wtFade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
   /* ===== Career (minimal timeline) ===== */
   .career-grid { border-top: 1px solid var(--line); }
   .job { display: grid; grid-template-columns: 150px 1fr; gap: 32px; padding: 24px 0; border-bottom: 1px solid var(--line); }
@@ -238,6 +282,11 @@
     .nav-links { display: flex; gap: 20px; overflow-x: auto; white-space: nowrap; padding: 10px 0; -webkit-overflow-scrolling: touch; }
     .nav-links::-webkit-scrollbar { display: none; }
     .nav-resume { display: none; }
+    .work-head { grid-template-columns: 36px 1fr 24px; gap: 10px; padding: 16px 10px; }
+    .wh-kind { display: none; }
+    .wh-main b { font-size: 14.5px; }
+    .wh-main em { font-size: 11.5px; }
+    .work-hint { width: 100%; }
     .sec-top { flex-direction: column; gap: 10px; }
     .sec-top .note { text-align: left; }
     .feature { padding: 34px 26px; }
@@ -345,11 +394,29 @@
           <div data-page-node-id="nuqBz1lDZLAHrowWGXTp3w" class="sec-label">02 — Selected Works</div>
           <h2 data-page-node-id="bufgYQH7IDfqYAQ7SbWRyv">作品展示</h2>
         </div>
-        <p data-page-node-id="kghNB8NPIFKbrnelIvmZFP" class="note">共 3 个作品：前两个为 AI 作品，可在线点开、体验、提问；第三个为企业平台代表作，点开卡片查看各段经历的具体做法。</p>
+        <p data-page-node-id="kghNB8NPIFKbrnelIvmZFP" class="note">共 4 个作品：前三项为 AI 作品，第四项为企业平台代表作。点开条目看详情，收起后页面保持精简。</p>
       </div>
 
-      <!-- 主作品 -->
-      <article data-page-node-id="eBO07diutBbipXRSTBluuc" class="feature reveal">
+      <!--
+        ===== 作品列表：手风琴交互，由脚本根据每个 article.work-item 的 data-* 自动生成索引行 =====
+        新增作品步骤（扩展约定）：
+          1) 复制下方任意一个 article.work-item 作品节点；
+          2) 改 id（work-N）、data-title、data-kind、data-cat（ai / platform）、data-summary；
+          3) 填好卡内文案与链接；索引行会自动出现，默认收起不影响页面长度。
+        注意：作品卡正文保持静态 HTML，便于在可视化编辑器中直接改文案。
+      -->
+      <div class="work-tools">
+        <div class="work-filters" id="workFilter">
+          <button type="button" data-filter="all" class="active">全部</button>
+          <button type="button" data-filter="ai">AI 作品</button>
+          <button type="button" data-filter="platform">平台作品</button>
+        </div>
+        <span class="work-hint">点击条目展开详情，再点一次收起</span>
+      </div>
+      <div class="work-acc" id="workAcc"></div>
+
+      <!-- 作品详情：点击上方索引行后展开，同一时间只展开一个 -->
+      <article data-page-node-id="eBO07diutBbipXRSTBluuc" id="work-1" class="feature reveal work-item" data-title="展馆智能导览 Demo" data-kind="AI 作品" data-cat="ai" data-summary="面向展馆/会展的 AI 导览智能体：RAG 限定问答 + TTS 语音讲解 + AI 内容生成，附解决方案与商业化测算。">
         <div data-page-node-id="FRIuee2BI20HpQuXPWkI6l" class="f-top">
           <span data-page-node-id="r4fuZ0BdFLSV533otT5uUD" class="f-no mono">作品 / 01</span>
           <span data-page-node-id="HidXE7zZeXXBCncBxQ6Unc" class="f-kind">Flagship · 可在线体验</span>
@@ -374,7 +441,7 @@
       </article>
 
       <!-- 主作品 2：AI 工作台（对等浅色卡） -->
-      <article data-page-node-id="5enYvoRaDyGOFIXbovRgP6" class="feature feature-light reveal" style="margin-top:18px">
+      <article data-page-node-id="5enYvoRaDyGOFIXbovRgP6" id="work-2" class="feature feature-light reveal work-item" style="margin-top:18px" data-title="产品经理 AI 工作台" data-kind="AI 作品" data-cat="ai" data-summary="Vibe Coding 搭建的 AI 工作台：契约体系 + 产品记忆点双级注入收敛输出，接入 NVIDIA NIM，SSE 流式记录过程。">
         <div data-page-node-id="7ETQlCnMEbWvOMjfKLhMqt" class="f-top">
           <span data-page-node-id="D7iyxJ3vraBJ09SJCAtnz5" class="f-no mono">作品 / 02</span>
           <span data-page-node-id="bC6AtP1tKvDamrpdwv3Dfk" class="f-kind">个人实践 · 可在线体验</span>
@@ -395,10 +462,35 @@
         </div>
       </article>
 
-      <!-- 主作品 3：企业平台代表作（与作品1/2同构的 feature 卡） -->
-      <article data-page-node-id="l1pVwFGLjI4Ihld15OaSge" class="feature reveal" style="margin-top:18px">
+      <!-- 主作品 3：邻里当家 · 业委会事务助手（AI 应用，三端可体验） -->
+      <article id="work-3" class="feature reveal work-item" style="margin-top:18px" data-title="邻里当家 · 业委会事务助手" data-kind="AI 作品" data-cat="ai" data-summary="面向业主与业委会的公共事务工具：RAG 政策问答 + 广佛双城流程 + 公示投票台账，业主端 H5 / 管理端 / 门户三端可在线体验。">
+        <div class="f-top">
+          <span class="f-no mono">作品 / 03</span>
+          <span class="f-kind">AI 应用 · 可在线体验</span>
+        </div>
+        <h3>邻里当家 · 业委会事务助手</h3>
+        <p class="f-desc">面向普通业主与业委会筹备组的公共事务工具：把散落的政策文件切块入库，以 RAG 问答给出带真实出处的答复；覆盖广州物管会与佛山筹备组两套流程，提供政策卡片、小区台账、公示投票与文档中心。业主端 H5、管理端 Web、门户三端均已上线，可用演示账号完整体验。</p>
+        <div class="f-pillars">
+          <div><b>RAG 政策问答</b><span>顾问交付的政策 / SOP 切块入库，回答带出处、不编造</span></div>
+          <div><b>广佛双城流程</b><span>广州物业管理委员会 / 佛山筹备组两套流程适配</span></div>
+          <div><b>事务闭环</b><span>政策 → 流程 → 公示 → 表决 → 台账全链路</span></div>
+          <div><b>三端 + 文档中心</b><span>业主 H5 / 管理 Web / 门户，49 项测试通过</span></div>
+        </div>
+        <div class="f-links">
+          <a class="flink flink-light" href="https://llin-yeweihui-demo.app.workbuddy.host/?sharecode=QPOG7OBJYN" target="_blank" rel="noopener">业主端 H5 <span>↗</span></a>
+          <a class="flink flink-light" href="https://llin-yeweihui-demo.app.workbuddy.host/admin/?sharecode=QPOG7OBJYN" target="_blank" rel="noopener">管理端 <span>↗</span></a>
+          <a class="flink flink-ghost" href="https://llin-yeweihui-demo.app.workbuddy.host/portal/?sharecode=QPOG7OBJYN" target="_blank" rel="noopener">线上门户 <span>↗</span></a>
+          <a class="flink flink-ghost" href="https://llin-yeweihui-demo.app.workbuddy.host/docs-hub/?sharecode=QPOG7OBJYN" target="_blank" rel="noopener">文档中心 <span>↗</span></a>
+        </div>
+        <div class="f-tags">
+          <span>RAG</span><span>FastAPI</span><span>Vue H5</span><span>SQLite</span><span>政策知识库</span><span>全流程事务</span><span>0 → 1 MVP</span>
+        </div>
+      </article>
+
+      <!-- 主作品 4：企业平台代表作（与作品1/2/3同构的 feature 卡） -->
+      <article data-page-node-id="l1pVwFGLjI4Ihld15OaSge" id="work-4" class="feature reveal work-item" style="margin-top:18px" data-title="企业级平台 · 基础服务产品" data-kind="平台代表作" data-cat="platform" data-summary="横跨 iPaaS、物联网、新零售三阶段的平台产品与基础服务：自研 BPM、消息/数据订阅/报警、审批与能力开放中心。">
         <div data-page-node-id="FRIuee2BI20HpQuXPWkI6l3" class="f-top">
-          <span data-page-node-id="XkSTtkChMtASjsBZScAlA3" class="f-no mono">作品 / 03</span>
+          <span data-page-node-id="XkSTtkChMtASjsBZScAlA3" class="f-no mono">作品 / 04</span>
           <span data-page-node-id="tNlc4s1QjbGyk3a3dkcQdV" class="f-kind">平台代表作 · 商用落地</span>
         </div>
         <h3 data-page-node-id="DrTEKLzFXpEE5noqtRIGB8">企业级平台 · 基础服务产品</h3>
@@ -532,7 +624,81 @@
   } else {
     items.forEach(function (el) { el.classList.add('in'); });
   }
-  // GitHub Pages 静态版：工作台链接固定指向 WorkBuddy Sites（带访问码）
+  // ===== 作品列表：手风琴交互（默认全收起，点索引行展开对应作品详情，再点收起） =====
+  (function () {
+    var works = Array.prototype.slice.call(document.querySelectorAll('article.work-item'));
+    var acc = document.getElementById('workAcc');
+    var filter = document.getElementById('workFilter');
+    if (!works.length || !acc) return;
+
+    var heads = [];
+    works.forEach(function (art, i) {
+      var n = String(i + 1).padStart(2, '0');
+      var id = art.id || ('work-' + (i + 1));
+      art.id = id;
+      art.setAttribute('data-index', n);
+      var title = art.getAttribute('data-title') || '作品 ' + n;
+      var kind = art.getAttribute('data-kind') || '作品';
+      var summary = art.getAttribute('data-summary') || '';
+      var cat = art.getAttribute('data-cat') || 'other';
+
+      var head = document.createElement('button');
+      head.type = 'button';
+      head.className = 'work-head';
+      head.setAttribute('data-target', id);
+      head.setAttribute('data-cat', cat);
+      head.setAttribute('aria-expanded', 'false');
+      head.innerHTML = '<span class="wh-no mono">' + n + '</span>' +
+        '<span class="wh-main"><b>' + title + '</b><em>' + summary + '</em></span>' +
+        '<span class="wh-kind">' + kind + '</span>' +
+        '<span class="wh-arrow">+</span>';
+      acc.appendChild(head);
+      // 把作品卡移到索引行后面，形成"索引行 + 详情"成对结构
+      acc.appendChild(art);
+      heads.push(head);
+    });
+
+    function openWork(id) {
+      works.forEach(function (art) {
+        var on = art.id === id;
+        art.classList.toggle('is-open', on);
+        if (on) art.classList.add('in'); // reveal 初始透明，展开时确保可见
+      });
+      heads.forEach(function (h) {
+        var on = h.getAttribute('data-target') === id;
+        h.classList.toggle('open', on);
+        h.setAttribute('aria-expanded', on ? 'true' : 'false');
+      });
+    }
+    acc.addEventListener('click', function (e) {
+      var head = e.target.closest('.work-head');
+      if (!head) return;
+      var id = head.getAttribute('data-target');
+      var art = document.getElementById(id);
+      var isOpen = art && art.classList.contains('is-open');
+      openWork(isOpen ? '' : id); // 点已展开的项则收起，实现开关
+    });
+
+    // 分类筛选：索引行与对应作品卡同步显隐；若当前展开项被筛掉则收起
+    if (filter) {
+      filter.addEventListener('click', function (e) {
+        var btn = e.target.closest('button[data-filter]');
+        if (!btn) return;
+        var cat = btn.getAttribute('data-filter');
+        filter.querySelectorAll('button').forEach(function (b) { b.classList.toggle('active', b === btn); });
+        heads.forEach(function (h) {
+          var show = (cat === 'all' || h.getAttribute('data-cat') === cat);
+          h.hidden = !show;
+          var art = document.getElementById(h.getAttribute('data-target'));
+          if (art) {
+            art.style.display = show ? '' : 'none';
+            if (!show) { art.classList.remove('is-open'); h.classList.remove('open'); h.setAttribute('aria-expanded', 'false'); }
+          }
+        });
+      });
+    }
+  })();
+
 
   // 平台代表作：四段经历详情
   var platformDetails = {
