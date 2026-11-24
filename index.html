@@ -827,4 +827,15 @@
 </script>
 
 
+<!-- Cloudflare Web Analytics -->
+<script>
+(function () {
+  try { if (localStorage.getItem('cf_wa_disabled') === '1') return; } catch (e) {}
+  var s = document.createElement('script');
+  s.type = 'module';
+  s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+  s.setAttribute('data-cf-beacon', '{"token": "66cb34b18dbe48ccb3915fa947a772d3"}');
+  document.body.appendChild(s);
+})();
+</script>
 </body></html>
